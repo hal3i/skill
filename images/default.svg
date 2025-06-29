@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="12.7mm"
+   height="12.700001mm"
+   viewBox="0 0 12.7 12.700001"
+   version="1.1"
+   id="svg5"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs2" />
+  <g
+     id="layer1"
+     transform="translate(-39.634666,-72.412669)">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.7px;line-height:1.25;font-family:sans-serif;fill:#cccccc;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="-48.346867"
+       y="-74.228767"
+       id="text1642"
+       transform="scale(-1)"><tspan
+         id="tspan1640"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.7px;font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';fill:#cccccc;stroke-width:0.264583"
+         x="-48.346867"
+         y="-74.228767" /></text>
+    <g
+       aria-label="&lt;/&gt;"
+       id="text2263"
+       style="font-size:7.76111px;line-height:1.25;stroke-width:0.264583">
+      <path
+         d="m 44.149171,80.633097 -3.655483,-1.606549 v -0.388056 l 3.655483,-1.823861 v 0.605367 l -2.925938,1.381478 2.925938,1.226255 z"
+         style="font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';fill:#ffffff"
+         id="path1467" />
+      <path
+         d="m 47.354498,75.991954 -2.064455,5.541432 h -0.667455 l 2.064455,-5.541432 z"
+         style="font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';fill:#ffffff"
+         id="path1469" />
+      <path
+         d="m 47.820163,80.027731 2.925938,-1.218494 -2.925938,-1.389239 v -0.605367 l 3.655483,1.823861 v 0.388056 l -3.655483,1.606549 z"
+         style="font-family:'Noto Sans';-inkscape-font-specification:'Noto Sans';fill:#ffffff"
+         id="path1471" />
+    </g>
+  </g>
+</svg>

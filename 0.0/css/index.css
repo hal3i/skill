@@ -1,0 +1,144 @@
+* {
+  font-size: 10pt;
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background-color: #004c99;
+}
+
+body {
+  color: white;
+}
+
+img {
+  width: 24px; height :24px;
+}
+
+#profile {
+  margin: 12px;
+}
+
+#proglang {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#markupmarkdown {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#stylesheet {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#query {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#hardwaredescription {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+div#hpbar {
+  background-color: #60a917; 
+  height: 100%;
+  padding: 1px;
+}
+
+div#spbar {
+  background-color: #1ba1e2;
+  height: 100%;
+  padding: 1px;
+}
+
+.skill-cell {
+  border: 1px white solid;
+  display: grid;
+  grid-template-columns: 2fr 7fr 3fr;
+  column-gap: 8px;
+  width: 200px;
+  height: 40px;
+  padding: 0px 4px 0px 4px;
+  margin: 8px;
+}
+
+.enable {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.disable {
+  background: rgb(0, 0, 0);
+  opacity: 0.4;
+}
+
+.skill-image {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  padding: 8px 4px 0px 4px;
+}
+
+.skill-name {
+  grid-column-start: 2;
+  grid-column-end: 4;
+  padding-top: 4px;
+  height: 18px;
+}
+
+.skill-bar {
+  background-color: #6666ff;
+  height: 100%;
+  padding: 1px 1px 0px 0px;
+}
+
+.skill-barborder {
+  border: 1px  #6666ff solid;
+  height: 10px;
+}
+
+.skill-lv {
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: lightgrey;
+  border-width: 0px 0px 1px 0px;
+}

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="24"
+   height="24"
+   viewBox="0 0 6.3499999 6.3500002"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname=".NET.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="mm"
+     showgrid="false"
+     units="px"
+     inkscape:zoom="5.3664983"
+     inkscape:cx="54.411645"
+     inkscape:cy="38.479468"
+     inkscape:window-width="1694"
+     inkscape:window-height="1013"
+     inkscape:window-x="179"
+     inkscape:window-y="388"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="レイヤー 2">
+    <rect
+       style="fill:#7014e8;fill-opacity:1;stroke:#7014e8;stroke-width:0;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:16.7;stroke-dasharray:none;stroke-opacity:1"
+       id="rect11563"
+       width="6.349999"
+       height="6.349999"
+       x="6.0603503e-07"
+       y="6.0603503e-07"
+       ry="0" />
+  </g>
+  <g
+     inkscape:label="レイヤー 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:2.46944px;line-height:1.25;font-family:sans-serif;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.264583"
+       x="0.18888266"
+       y="4.0751157"
+       id="text1244"><tspan
+         sodipodi:role="line"
+         id="tspan1242"
+         style="font-size:2.46944px;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="0.18888266"
+         y="4.0751157">.NET</tspan></text>
+  </g>
+</svg>

@@ -1,0 +1,287 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+html {
+  background-color: #004c99;
+}
+
+body {
+  color: white;
+  min-height: 100%;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  height: 100vh;
+}
+
+main {
+  overflow-y: auto;
+}
+
+footer {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+}
+
+img.skill-icon {
+  width: 24px;
+  height: 24px;
+}
+
+#profile {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px white solid;
+  width: 400px;
+  margin: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 40px auto 48px 10px 48px;
+  column-gap: 8px;
+  row-gap: 8px;
+  position: relative;
+  z-index: 0;
+}
+
+#profile div {
+  display: flex;
+  align-items: center;
+}
+
+#programming {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+#platform,
+#markup-markdown,
+#stylesheet,
+#query,
+#hardware-description,
+#data,
+#commandline,
+#version-control,
+#container-virtualization,
+#infrastructure,
+#web-server,
+#multi-platform,
+#rtos,
+#cicd {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 8px;
+}
+
+#hp, #sp, #max_hp, #max_sp {
+  text-align: right;
+  z-index: 1;
+}
+
+#hp-bar, #sp-bar {
+  position: relative;
+}
+
+#hp-fill {
+  background-color: #60a917;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+}
+
+#hp-border {
+  border: 1px #2d7600 solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+#sp-fill {
+  background-color: #1ba1e2;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+}
+
+#sp-border {
+  border: 1px #006eaf solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+#qrcode-contents {
+  display: grid;
+  justify-content: center;
+}
+
+#qrcode-contents:not(.invisible) {
+  margin: 24px;
+}
+
+#qrcode {
+  background-color: white;
+}
+
+#qrcode:not(.invisible) {
+  padding: 8px;
+}
+
+.external-link {
+  font-size: 7pt;
+  vertical-align: top;
+}
+
+.link-cell {
+  display: table-cell;
+  height: 20px;
+  padding: 2px 2px 0px 0px;
+  z-index: 1;
+}
+
+.domain {
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 8px;
+  padding: 8px;
+}
+
+.skill-cell {
+  border: 1px white solid;
+  display: grid;
+  grid-template-columns: 40px 1fr auto;
+  grid-template-rows: 1fr 1fr;
+  width: 200px;
+  height: 40px;
+}
+
+div.enable {
+  background: rgba(9, 9, 9, 0.4);
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, .5);
+}
+
+div.disable {
+  background: rgb(12, 12, 12);
+  opacity: 0.4;
+}
+
+.invisible {
+  visibility: hidden !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.skill-image {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.skill-namecell {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: table;
+}
+
+.skill-name {
+  font-size: 12px;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.skill-lvinfo {
+  display: flex;
+  grid-column: 2 / 4;
+}
+
+.skill-lvbar {
+  position: relative;
+  width: 108px;
+}
+
+.lv-fill {
+  background-color: #6666ff;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+}
+
+.lv-border {
+  border: 1px  #6666ff solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+}
+
+.skill-lv {
+  font-size: 12px;
+  position: relative;
+  left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+a {
+  color: white;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: lightgrey;
+  border-width: 0px 0px 1px 0px;
+}
+
+path.line,
+polyline.line {
+  fill: rgba(0,0,0,0); stroke-width: 1;
+}
+
+path.enable,
+polyline.enable {
+  stroke: white;
+}
+
+path.disable,
+polyline.disable {
+  stroke: rgba(255,255,255,0.4);
+}
+
+text.default {
+  font-size: 8;
+}
+
+text.enable {
+  fill: white;
+}
+text.disable {
+  fill: rgba(255,255,255,0.4)
+}

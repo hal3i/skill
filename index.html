@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-language" content="ja">
+    <meta charset="utf-8">
+    <title>skill simulator</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <link href="./css/open-iconic.min.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="wrapper">
+    <script src="./js/version.js"></script>
+    <script src="./js/check.js"></script>
+    <main>
+      <header>
+        <noscript>
+          <div style="margin: 2px;">JavaScriptが無効です。機能を利用するためには有効にしてください。</div>
+        </noscript>
+        <div style="padding: 8px;"><a href="https://hal3i.github.io/skill/">Skill Simulator</a></div>
+      </header>
+      <div id="profile_contents">
+        <form id="profile">
+          <div>名前</div><input id="name" type="text"><div style="justify-content: flex-end;">Lv.</div><div></div><input id="lv" type="text" style="text-align: right;">
+          <div>職業</div><input id="job" type="text"><div style="justify-content: flex-end;">状態</div><div></div><input id="status" type="text" style="text-align: right;">
+          <div title="Health Point(健康度)">HP</div><div id="hp-bar"><div id="hp-fill"></div><div id="hp-border"></div></div><input id="hp" type="text"><div style="position: relative; z-index: 1;">/</div><input id="max_hp" type="text" style="text-align: right;">
+          <div title="Skill Point(技術力)">SP</div><div id="sp-bar"><div id="sp-fill"></div><div id="sp-border"></div></div><input id="sp" type="text"><div style="position: relative; z-index: 1;">/</div><input id="max_sp" type="text" style="text-align: right;">
+          <div title="Experience Point(経験値)">EXP</div><input id="exp" type="text" style="grid-column-start: 2; grid-column-end: -1; text-align: right;">
+        </form>
+      </div>
+      <div style="display: flex; flex-wrap: wrap;">
+        <div class="domain">
+          <div style="margin: 8px;">プログラミング言語</div>
+          <div id="programming">
+            <div id="ABAP" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">ABAP</div></div></div>
+            <div id="Arduino" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/arduino.svg"></div><div class="skill-namecell"><div class="skill-name">Arduino</div></div><div class="link-cell"><a class="external-link" href="https://www.arduino.cc" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Assembly Language" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Assembly Language</div></div></div>
+            <div id="COBOL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">COBOL</div></div></div>
+            <div id="Crystal" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/crystal.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Crystal</div></div><div class="link-cell"><a class="external-link" href="https://crystal-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="D" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/dlogo_2015.svg"></div><div class="skill-namecell"><div class="skill-name">D</div></div><div class="link-cell"><a class="external-link" href="https://dlang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Delphi/Object Pascal" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Delphi/Object Pascal</div></div><div class="link-cell"><a class="external-link" href="http://www.embarcadero.com/jp/products/delphi" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Erlang" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/erlang.svg"></div><div class="skill-namecell"><div class="skill-name">Erlang</div></div><div class="link-cell"><a class="external-link" href="https://www.erlang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="FORTRAN" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/fortran.svg"></div><div class="skill-namecell"><div class="skill-name">FORTRAN</div></div><div class="link-cell"><a class="external-link" href="https://fortran-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Groovy" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/groovy.png"></div><div class="skill-namecell"><div class="skill-name">Groovy</div></div><div class="link-cell"><a class="external-link" href="https://groovy-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Haskell" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/haskell.svg"></div><div class="skill-namecell"><div class="skill-name">Haskell</div></div><div class="link-cell"><a class="external-link" href="https://www.haskell.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="J" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">J</div></div><div class="link-cell"><a class="external-link" href="https://www.jsoftware.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Julia" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/julia.svg"></div><div class="skill-namecell"><div class="skill-name">Julia</div></div><div class="link-cell"><a class="external-link" href="https://julialang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Kotlin" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/kotlin.svg"></div><div class="skill-namecell"><div class="skill-name">Kotlin</div></div><div class="link-cell"><a class="external-link" href="https://kotlinlang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="OCaml" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/ocaml.svg"></div><div class="skill-namecell"><div class="skill-name">OCaml</div></div><div class="link-cell"><a class="external-link" href="https://ocaml.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Perl" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/perl.svg"></div><div class="skill-namecell"><div class="skill-name">Perl</div></div><div class="link-cell"><a class="external-link" href="https://www.perl.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Prolog" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Prolog</div></div></div>
+            <div id="Q#" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Q#</div></div><div class="link-cell"><a class="external-link" href="https://docs.microsoft.com/en-us/azure/quantum/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="R" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/r.svg"></div><div class="skill-namecell"><div class="skill-name">R</div></div><div class="link-cell"><a class="external-link" href="https://www.r-project.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Rust" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/rust.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Rust</div></div><div class="link-cell"><a class="external-link" href="http://www.rust-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Scratch" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/scratch.png"></div><div class="skill-namecell"><div class="skill-name">Scratch</div></div><div class="link-cell"><a class="external-link" href="https://scratch.mit.edu" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Swift" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/swift.svg"></div><div class="skill-namecell"><div class="skill-name">Swift</div></div><div class="link-cell"><a class="external-link" href="https://swift.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="V" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/v.svg"></div><div class="skill-namecell"><div class="skill-name">V</div></div><div class="link-cell"><a class="external-link" href="https://vlang.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="WebAssembly" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/webassembly.svg"></div><div class="skill-namecell"><div class="skill-name">WebAssembly</div></div><div class="link-cell"><a class="external-link" href="https://webassembly.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Zig" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/zig.svg"></div><div class="skill-namecell"><div class="skill-name">Zig</div></div><div class="link-cell"><a class="external-link" href="https://ziglang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <!-- 日本語プログラミング -->
+            <div id="nadesiko" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">なでしこ</div></div><div class="link-cell"><a class="external-link" href="https://nadesi.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="dolittle" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">ドリトル</div></div><div class="link-cell"><a class="external-link" href="https://dolittle.eplang.jp" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="produire" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">プロデル</div></div><div class="link-cell"><a class="external-link" href="https://rdr.utopiat.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <!-- Dart -->
+            <div style="display: grid; grid-template-columns: auto 60px auto; grid-template-rows: auto; height: 40px;">
+              <div id="Dart" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/dart.svg"></div><div class="skill-namecell"><div class="skill-name">Dart</div></div><div class="link-cell"><a class="external-link" href="https://dart.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="Flutter" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/flutter.svg"></div><div class="skill-namecell"><div class="skill-name">Flutter</div></div><div class="link-cell"><a class="external-link" href="https://flutter.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="Dart-UI toolkit" class="disable" x="8" y="17" font-size="8">UI toolkit</text>
+                <polyline id="Dart-Flutter" class="line disable" points="0,20, 60,20" />
+              </svg>
+            </div>
+            <!-- Go -->
+            <div style="display: grid; grid-template-columns: auto 60px auto; grid-template-rows: auto; height: 40px;">
+              <div id="Go" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/go.svg"></div><div class="skill-namecell"><div class="skill-name">Go</div></div><div class="link-cell"><a class="external-link" href="https://golang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="Hugo" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/hugo.svg"></div><div class="skill-namecell"><div class="skill-name">Hugo</div></div><div class="link-cell"><a class="external-link" href="https://gohugo.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="Go-Framework" class="disable" x="8" y="17" font-size="8">Framework</text>
+                <polyline id="Go-Hugo" class="line disable" points="0,20, 60,20" />
+              </svg>
+            </div>
+            <!-- Elixir -->
+            <div style="display: grid; grid-template-columns: auto 80px auto; grid-template-rows: auto; height: 40px;">
+              <div id="Elixir" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/elixir.svg"></div><div class="skill-namecell"><div class="skill-name">Elixir</div></div><div class="link-cell"><a class="external-link" href="https://elixir-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="Phoenix" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/phoenix.png" style="height: auto;"></div><div class="skill-namecell"><div class="skill-name">Phoenix</div></div><div class="link-cell"><a class="external-link" href="https://www.phoenixframework.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="Elixir-Framework" class="disable" x="8" y="17" font-size="8">Web framework</text>
+                <polyline id="Elixir-Phoenix" class="line disable" points="0,20, 80,20" />
+              </svg>
+            </div>
+            <!-- Ruby -->
+            <div style="display: grid; grid-template-columns: auto 80px auto; grid-template-rows: auto; height: 40px;">
+              <div id="Ruby" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/ruby.svg"></div><div class="skill-namecell"><div class="skill-name">Ruby</div></div><div class="link-cell"><a class="external-link" href="https://www.ruby-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="Rails" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/rails.svg"></div><div class="skill-namecell"><div class="skill-name">Rails</div></div><div class="link-cell"><a class="external-link" href="https://rubyonrails.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="Ruby-Web framework" class="disable" x="8" y="17" font-size="8">Web framework</text>
+                <polyline id="Ruby-Rails" class="line disable" points="0,20, 80,20" />
+              </svg>
+            </div>
+            <!-- Tcl -->
+            <div style="display: grid; grid-template-columns: auto 60px auto; grid-template-rows: auto; height: 40px;">
+              <div id="Tcl" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tcl.png"></div><div class="skill-namecell"><div class="skill-name">Tcl</div></div><div class="link-cell"><a class="external-link" href="https://www.tcl-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="Tk" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Tk</div></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="Tcl-GUI toolkit" class="disable" x="8" y="17" font-size="8">GUI toolkit</text>
+                <polyline id="Tcl-Tk" class="line disable" points="0,20, 60,20" />
+              </svg>
+            </div>
+            <div style="display: grid; gap: 8px;">
+              <!-- Haxe -->
+              <div id="Haxe" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/haxe.svg"></div><div class="skill-namecell"><div class="skill-name">Haxe</div></div><div class="link-cell"><a class="external-link" href="https://haxe.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <!-- Nim -->
+              <div style="grid-row: 1; grid-column: 1; display: grid; margin: 96px 0px 0px 40px ;">
+                <div style="display: grid; grid-row: 1; grid-column: 1;">
+                  <div id="Nim" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/nim.png" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Nim</div></div><div class="link-cell"><a class="external-link" href="https://nim-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div style="display: flex; flex-direction: column; gap: 8px; grid-row: 1; grid-column: 1; margin: 96px 0px 0px 40px;">
+                    <div style="display: grid;">
+                      <!-- C -->
+                      <div id="C" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/c.svg"></div><div class="skill-namecell"><div class="skill-name">C</div></div></div>
+                      <!-- C++ -->
+                      <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; justify-content: start; align-items: center;">
+                        <div id="C++" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/c-plusplus.svg"></div><div class="skill-namecell"><div class="skill-name">C++</div></div></div>
+                        <div style="grid-column: 3; display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                          <div id="Boost" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/boost.png"></div><div class="skill-namecell"><div class="skill-name">Boost</div></div><div class="link-cell"><a class="external-link" href="https://www.boost.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div id="Qt" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/qt.svg"></div><div class="skill-namecell"><div class="skill-name">Qt</div></div><div class="link-cell"><a class="external-link" href="https://www.qt.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div id="Unreal Engine" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/unreal-engine.svg"></div><div class="skill-namecell"><div class="skill-name">Unreal Engine</div></div><div class="link-cell"><a class="external-link" href="https://www.unrealengine.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                        </div>
+                        <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 92px; height: 136px;">
+                          <text id="C++-Library" class="disable" x="32" y="16" font-size="8">Library</text>
+                          <polyline id="C++-Boost" class="line disable" points="0,60 20,60 20,20 92,20" />
+                          <text id="C++-Framework" class="disable" x="32" y="64" font-size="8">Framework</text>
+                          <polyline id="C++-Qt" class="line disable" points="0,68 92,68" />
+                          <text id="C++-Engine" class="disable" x="32" y="112" font-size="8">Game Engine</text>
+                          <polyline id="C++-Unreal Engine" class="line disable" points="0,76 20,76 20,116 92,116" />
+                        </svg>
+                      </div>
+                    </div>
+                    <div id="Objective-C" class="skill-cell disable" style="margin-top: 48px;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Objective-C</div></div><div class="link-cell"><a class="external-link" href="https://developer.apple.com/library/archive/documentation/Cocoa/Conceptual/ProgrammingWithObjectiveC/Introduction/Introduction.html" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  </div>
+                  <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 540px; height: 288px; margin-top: 40px;">
+                    <text id="Nim-Compile" class="disable" x="24" y="20" font-size="8">Compile</text>
+                    <polyline id="Nim-C" class="line disable" points="20,76 40,76" />
+                    <polyline id="Nim-C++" class="line disable" points="20,124 40,124" />
+                    <polyline id="Nim-JavaScript" class="line disable" points="20,220 540,220" />
+                    <polyline id="Nim-Objective-C" class="line disable" points="20,0 20,268 40,268" />
+                  </svg>
+                </div>
+                <!-- Scala -->
+                <div style="display: grid; grid-row: 1; grid-column: 1; margin-left: 260px;">
+                  <div id="Scala" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/scala.svg"></div><div class="skill-namecell"><div class="skill-name">Scala</div></div><div class="link-cell"><a class="external-link" href="https://www.scala-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 320px; height: 240px;">
+                    <text id="Scala-on the JVM" class="disable" x="208" y="17" font-size="8">on the JVM</text>
+                    <polyline id="Scala-Java" class="line disable" points="200,20 280,20" />
+                    <text id="Scala-Scala.js" class="disable" x="208" y="56" font-size="8">Scala.js</text>
+                    <polyline id="Scala-JavaScript" class="line disable" points="180,40 180,60 300,60 300,240" />
+                  </svg>
+                  <!-- Java -->
+                  <div style="display: grid; grid-auto-columns: auto; justify-self: start; align-self: start; grid-row: 1; grid-column: 1; margin: 0px 0px 0px 280px;">
+                    <div id="Java" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/java.svg"></div><div class="skill-namecell"><div class="skill-name">Java</div></div><div class="link-cell"><a class="external-link" href="https://www.oracle.com/java" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div style="grid-column: 3; display: grid; grid-auto-rows: auto;">
+                      <div id="Jakarta EE" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Jakarta EE</div></div><div class="link-cell"><a class="external-link" href="https://jakarta.ee" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="Play" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/play.svg"></div><div class="skill-namecell"><div class="skill-name">Play</div></div><div class="link-cell"><a class="external-link" href="https://www.playframework.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="Spring" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/spring.svg" style="background-color: white;"></div><div class="skill-namecell"><div class="skill-name">Spring</div></div><div class="link-cell"><a class="external-link" href="https://spring.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="Struts" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/struts.svg"></div><div class="skill-namecell"><div class="skill-name">Struts</div></div><div class="link-cell"><a class="external-link" href="https://struts.apache.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 80px; height: 192px;">
+                      <text id="Java-Framework" class="disable" x="8" y="17" font-size="8">Framework</text>
+                      <polyline id="Java-Jakarta EE" class="line disable" points="0,20 80,20" />
+                      <polyline id="Java-Play" class="line disable" points="60,68 80,68" />
+                      <polyline id="Java-Spring" class="line disable" points="60,116 80,116" />
+                      <polyline id="Java-Struts" class="line disable" points="60,20 60,164 80,164" />
+                    </svg>
+                  </div>
+                  <!-- JavaScript -->
+                  <div style="display: grid; grid-auto-columns: auto; grid-row: 1; grid-column: 1; margin: 240px 0px 0px 280px;">
+                    <div id="JavaScript" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/javascript.svg"></div><div class="skill-namecell"><div class="skill-name">JavaScript</div></div></div>
+                    <!-- AltJS -->
+                    <div style="display: grid; grid-auto-rows: auto; row-gap: 8px; grid-row: 1; grid-column: 1; justify-self: start; align-self: start; position: relative; left: 40px; top: 336px;">
+                      <div id="CoffeeScript" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/coffeescript.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">CoffeeScript</div></div><div class="link-cell"><a class="external-link" href="https://coffeescript.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="Elm" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/elm.svg"></div><div class="skill-namecell"><div class="skill-name">Elm</div></div><div class="link-cell"><a class="external-link" href="https://elm-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="LiveScript" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/livescript.svg"></div><div class="skill-namecell"><div class="skill-name">LiveScript</div></div><div class="link-cell"><a class="external-link" href="http://livescript.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="PureScript" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/purescript.svg"></div><div class="skill-namecell"><div class="skill-name">PureScript</div></div><div class="link-cell"><a class="external-link" href="https://www.purescript.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="TypeScript" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/typescript.svg"></div><div class="skill-namecell"><div class="skill-name">TypeScript</div></div><div class="link-cell"><a class="external-link" href="https://www.typescriptlang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 280px; height: 568px; justify-self: start; align-self: start;">
+                      <text id="JavaScript-AltJS" class="disable" x="24" y="68" font-size="8">AltJS</text>
+                      <polyline id="JavaScript-CoffeeScript" class="line disable" points="20,356 40,356" />
+                      <polyline id="JavaScript-Elm" class="line disable" points="20,404 40,404" />
+                      <polyline id="JavaScript-LiveScript" class="line disable" points="20,452 40,452" />
+                      <polyline id="JavaScript-PureScript" class="line disable" points="20,500 40,500" />
+                      <polyline id="JavaScript-TypeScript" class="line disable" points="20,40 20,548 40,548" />
+                      <text id="JavaScript-Environment" class="disable" x="208" y="257" font-size="8">Environment</text>
+                      <polyline id="JavaScript-Node.js" class="line disable" points="160,260 280,260" />
+                      <text id="JavaScript-Runtime" class="disable" x="208" y="305" font-size="8">Runtime</text>
+                      <polyline id="JavaScript-Deno" class="line disable" points="160,40 160,308 280,308" />
+                      <polyline id="JavaScript-Bun" class="line disable" points="260,308 260,352 280,352" />
+                      <text id="JavaScript-Library" class="disable" x="208" y="17" font-size="8">Library</text>
+                      <polyline id="JavaScript-jQuery" class="line disable" points="200,20, 280,20" />
+                      <text id="JavaScript-Framework" class="disable" x="208" y="65" font-size="8">Framework</text>
+                      <polyline id="JavaScript-Angular" class="line disable" points="260,68, 280,68" />
+                      <polyline id="JavaScript-React" class="line disable" points="260,116, 280,116" />
+                      <polyline id="JavaScript-Svelte" class="line disable" points="260,164, 280,164" />
+                      <polyline id="JavaScript-Vue.js" class="line disable" points="180,40 180,68 260,68 260,212, 280,212" />
+                    </svg>
+                    <div style="grid-row: 1; grid-column: 2;">
+                      <!-- library / framework -->
+                      <div style="display: grid; grid-auto-rows: auto; row-gap: 8px; margin-bottom: 8px;">
+                        <div id="jQuery" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/jquery.svg"></div><div class="skill-namecell"><div class="skill-name">jQuery</div></div><div class="link-cell"><a class="external-link" href="https://jquery.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                        <div id="Angular" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/angular.svg"></div><div class="skill-namecell"><div class="skill-name">Angular</div></div><div class="link-cell"><a class="external-link" href="https://angular.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                        <!-- React -->
+                        <div style="display: grid; grid-auto-columns: auto; justify-content: start;">
+                          <div id="React" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/react.svg"></div><div class="skill-namecell"><div class="skill-name">React</div></div><div class="link-cell"><a class="external-link" href="https://reactjs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div id="Svelte" class="skill-cell disable" style="grid-row: 1; grid-column: 1; position: relative; top: 48px;"><div class="skill-image"><img class="skill-icon" src="./images/svelte.svg"></div><div class="skill-namecell"><div class="skill-name">Svelte</div></div><div class="link-cell"><a class="external-link" href="https://svelte.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div style="grid-row: 1; grid-column: 3; display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                            <div id="Gatsby" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/gatsby.svg"></div><div class="skill-namecell"><div class="skill-name">Gatsby</div></div><div class="link-cell"><a class="external-link" href="https://www.gatsbyjs.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                            <div id="Next.js" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/nextjs.png"></div><div class="skill-namecell"><div class="skill-name">Next.js</div></div><div class="link-cell"><a class="external-link" href="https://nextjs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          </div>
+                          <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 60px; height: 88px;">
+                            <text id="React-Framework" class="disable" x="8" y="17" fill="rgba(255,255,255,0.4)" font-size="8">Framework</text>
+                            <polyline id="React-Gatsby" class="line disable" points="0,20, 60,20" />
+                            <polyline id="React-Next.js" class="line disable" points="40,20, 40,68 60,68" />
+                          </svg>
+                        </div>
+                        <!-- Vue.js -->
+                        <div style="display: grid; grid-auto-columns: auto; justify-content: start;">
+                          <div id="Vue.js" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/vuejs.svg"></div><div class="skill-namecell"><div class="skill-name">Vue.js</div></div><div class="link-cell"><a class="external-link" href="https://vuejs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div id="Nuxt.js" class="skill-cell disable" style="grid-row: 1; grid-column: 3;"><div class="skill-image"><img class="skill-icon" src="./images/nuxt.svg"></div><div class="skill-namecell"><div class="skill-name">Nuxt.js</div></div><div class="link-cell"><a class="external-link" href="https://nuxtjs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 60px; height: 40px;">
+                            <text id="Vue.js-Framework" class="disable" x="8" y="17" font-size="8">Framework</text>
+                            <polyline id="Vue.js-Nuxt.js" class="line disable" points="0,20, 60,20" />
+                          </svg>
+                        </div>
+                        <!-- deno -->
+                        <div style="display: grid; grid-auto-columns: auto; justify-content: start;">
+                          <div id="Deno" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/deno.svg"></div><div class="skill-namecell"><div class="skill-name">Deno</div></div><div class="link-cell"><a class="external-link" href="https://deno.land" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <div id="Fresh" class="skill-cell disable" style="grid-row: 1; grid-column: 3;"><div class="skill-image"><img class="skill-icon" src="./images/fresh.svg"></div><div class="skill-namecell"><div class="skill-name">Fresh</div></div><div class="link-cell"><a class="external-link" href="https://fresh.deno.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 80px; height: 40px;">
+                            <text id="Deno-Web framework" class="disable" x="8" y="17" font-size="8">Web framework</text>
+                            <polyline id="Deno-Fresh" class="line disable" points="0,20, 80,20" />
+                          </svg>
+                        </div>
+                        <!-- Node.js -->
+                        <div style="display: grid; grid-auto-columns: auto;">
+                          <div style="display: grid; grid-auto-rows: min-content; row-gap: 8px; grid-row: 1; grid-column: 1;">
+                            <div id="Node.js" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/nodejs.svg"></div><div class="skill-namecell"><div class="skill-name">Node.js</div></div><div class="link-cell"><a class="external-link" href="https://nodejs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                            <div id="Bun" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/bun.png"></div><div class="skill-namecell"><div class="skill-name">Bun</div></div><div class="link-cell"><a class="external-link" href="https://bun.sh" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          </div>
+                          <div style="grid-row: 1; grid-column: 3;display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                            <div id="Express" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Express</div></div><div class="link-cell"><a class="external-link" href="https://expressjs.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                            <div id="fastify" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/fastify.svg"></div><div class="skill-namecell"><div class="skill-name">fastify</div></div><div class="link-cell"><a class="external-link" href="https://www.fastify.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                            <div id="Koa" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/koa.png"></div><div class="skill-namecell"><div class="skill-name">Koa</div></div><div class="link-cell"><a class="external-link" href="https://koajs.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          </div>
+                          <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 80px; height: 136px;">
+                            <text id="Node.js-Framework" class="disable" x="8" y="17" font-size="8">Framework</text>
+                            <polyline id="Node.js-Express" class="line disable" points="0,20, 80,20" />
+                            <polyline id="Node.js-fastify" class="line disable" points="60,68, 80,68" />
+                            <polyline id="Node.js-Koa" class="line disable" points="60,20, 60,116 80,116" />
+                          </svg>
+                          <div id="NestJS" class="skill-cell disable" style="grid-row: 1; grid-column: 5;"><div class="skill-image"><img class="skill-icon" src="./images/nestjs.svg"></div><div class="skill-namecell"><div class="skill-name">NestJS</div></div><div class="link-cell"><a class="external-link" href="https://nestjs.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                          <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 4; width: 80px; height: 88px;">
+                            <text id="NestJS-Framework" class="disable" x="28" y="17" font-size="8">Framework</text>
+                            <polyline id="Express-NestJS" class="line disable" points="0,20, 80,20" />
+                            <polyline id="fastify-NestJS" class="line disable" points="0,68, 20,68 20,21, 80,21" />
+                          </svg>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Lisp -->
+                  <div style="display: grid; grid-row: 1; grid-column: 1; margin-top: 288px;">
+                    <div id="Lisp" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Lisp</div></div></div>
+                    <div style="display: grid; grid-row: 1; grid-column: 1;  margin: 48px 0px 0px 40px;">
+                      <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; position: relative; width: 240px; height: 184px; top: -96px;">
+                        <text id="Clojure-ClojureScript" class="disable" font-size="8" x="32" y="160">ClojureScript</text>
+                        <polyline id="Clojure-JavaScript" class="line disable" points="20,136 20,164 220,164 220,28 240,28"></polyline>
+                      </svg>
+                      <div id="Clojure" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/clojure.svg"></div><div class="skill-namecell"><div class="skill-name">Clojure</div></div><div class="link-cell"><a class="external-link" href="https://clojure.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    </div>
+                    <div style="display: grid; grid-row: 1; grid-column: 1; margin: 146px 0px 0px 40px;">
+                      <div id="Scheme" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Scheme</div></div><div class="link-cell"><a class="external-link" href="http://www.scheme-reports.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <div id="Racket" class="skill-cell disable" style="grid-row: 1; grid-column: 1; margin: 48px 0px 0px 40px;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Racket</div></div><div class="link-cell"><a class="external-link" href="https://racket-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                      <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 40px; height: 48px; margin-top: 40px;">
+                        <polyline id="Scheme-Racket" class="line disable" points="20,0 20,28 40,28" />
+                      </svg>
+                    </div>
+                    <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 40px; height: 144px; margin-top: 40px;">
+                      <polyline id="Lisp-Clojure" class="line disable" points="20,28 40,28" />
+                      <polyline id="Lisp-Scheme" class="line disable" points="20,0 20,124 40,124" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div id="Lua" class="skill-cell disable" style="grid-row: 1; grid-column: 1; margin:432px 0px 0px 40px;"><div class="skill-image"><img class="skill-icon" src="./images/lua.gif" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Lua</div></div><div class="link-cell"><a class="external-link" href="https://www.lua.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <!-- .NET -->
+              <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; justify-content: start; align-items: start; margin: 626px 0px 0px 40px;">
+                <div style="display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                  <div id="C#" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/c-sharp.svg"></div><div class="skill-namecell"><div class="skill-name">C#</div></div></div>
+                  <div id="F#" class="skill-cell disable" style="grid-row: 2; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/fsharp.svg"></div><div class="skill-namecell"><div class="skill-name">F#</div></div><div class="link-cell"><a class="external-link" href="https://fsharp.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Visual Basic" class="skill-cell disable" style="grid-row: 3; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/vb.svg"></div><div class="skill-namecell"><div class="skill-name">Visual Basic</div></div></div>
+                </div>
+                <div style="grid-column: 3; display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                  <div id="Unity" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/unity.svg"></div><div class="skill-namecell"><div class="skill-name">Unity</div></div><div class="link-cell"><a class="external-link" href="https://unity.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id=".NET" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/.net.svg"></div><div class="skill-namecell"><div class="skill-name">.NET</div></div><div class="link-cell"><a class="external-link" href="https://dot.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 80px; height: 136px;">
+                  <text id="C#-Engine" class="disable" x="8" y="17" font-size="8">Game engine</text>
+                  <polyline id="C#-Unity" class="line disable" points="0,20 80,20" />
+                  <text id=".NET-Framework" class="disable" x="28" y="64" font-size="8">Framework</text>
+                  <polyline id="C#-.NET" class="line disable" points="0,30 20,30 20,67 80,67" />
+                  <polyline id="F#-.NET" class="line disable" points="0,68 80,68" />
+                  <polyline id="Visual Basic-.NET" class="line disable" points="0,116 20,116 20,69 80,69" />
+                </svg>
+              </div>
+              <!-- PHP -->
+              <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; justify-content: start; align-items: start; margin: 818px 0px 0px 40px;">
+                <div style="display: grid;">
+                  <div id="PHP" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/php.svg"></div><div class="skill-namecell"><div class="skill-name">PHP</div></div><div class="link-cell"><a class="external-link" href="https://www.php.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Hack" class="skill-cell disable" style="grid-row: 1; grid-column: 1; position: relative; left: 40px; top: 48px;"><div class="skill-image"><img class="skill-icon" src="./images/hack.svg" style="background-color: white;"></div><div class="skill-namecell"><div class="skill-name">Hack</div></div><div class="link-cell"><a class="external-link" href="https://hacklang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 40px; height: 48px; margin-top: 40px;">
+                    <polyline id="PHP-Hack" class="line disable" points="20,0, 20,28 40,28" />
+                  </svg>
+                </div>
+                <div style="grid-column: 3; display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                  <div id="WordPress" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/wordpress.svg" style="background-color: white;"></div><div class="skill-namecell"><div class="skill-name">WordPress</div></div><div class="link-cell"><a class="external-link" href="https://wordpress.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="CakePHP" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/cakephp.svg"></div><div class="skill-namecell"><div class="skill-name">CakePHP</div></div><div class="link-cell"><a class="external-link" href="https://cakephp.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="CodeIgniter" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/codeigniter.svg"></div><div class="skill-namecell"><div class="skill-name">CodeIgniter</div></div><div class="link-cell"><a class="external-link" href="https://www.codeigniter.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="FuelPHP" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/fuelphp.svg"></div><div class="skill-namecell"><div class="skill-name">FuelPHP</div></div><div class="link-cell"><a class="external-link" href="https://fuelphp.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Laravel" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/laravel.svg"></div><div class="skill-namecell"><div class="skill-name">Laravel</div></div><div class="link-cell"><a class="external-link" href="https://laravel.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Phalcon" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/phalcon.svg"></div><div class="skill-namecell"><div class="skill-name">Phalcon</div></div><div class="link-cell"><a class="external-link" href="https://phalcon.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Symfony" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/symfony.svg"></div><div class="skill-namecell"><div class="skill-name">Symfony</div></div><div class="link-cell"><a class="external-link" href="https://symfony.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100px; height: 328px;">
+                  <text id="PHP-CMS" class="disable" x="8" y="12" font-size="8">CMS</text>
+                  <polyline id="PHP-WordPress" class="line disable" points="0,15, 100,15" />
+                  <text id="PHP-Web framework" class="disable" x="8" y="27" font-size="8">Web framework</text>
+                  <polyline id="PHP-CakePHP" class="line disable" points="80,68, 100,68" />
+                  <polyline id="PHP-CodeIgniter" class="line disable" points="80,116, 100,116" />
+                  <polyline id="PHP-FuelPHP" class="line disable" points="80,164, 100,164" />
+                  <polyline id="PHP-Laravel" class="line disable" points="80,212 100,212" />
+                  <polyline id="PHP-Phalcon" class="line disable" points="80,260 100,260" />
+                  <polyline id="PHP-Symfony" class="line disable" points="0,30 80,30 80,308 100,308" />
+                </svg>
+              </div>
+              <!-- Python -->
+              <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; justify-content: start; margin: 1154px 0px 0px 40px;">
+                <div style="display: grid; position: relative;">
+                  <div id="Python" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/python.svg"></div><div class="skill-namecell"><div class="skill-name">Python</div></div><div class="link-cell"><a class="external-link" href="https://www.python.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <svg style="grid-row: 1; grid-column: 1; width: 200px; height: 232px; justify-self: start; align-self: start;">
+                    <text id="Python-Machine Learning" class="disable" x="24" y="68" font-size="8">Machine Learning</text>
+                    <polyline id="Python-PyTorch" class="line disable" points="20,116 40,116" />
+                    <polyline id="Python-scikit-learn" class="line disable" points="20,164 40,164" />
+                    <polyline id="Python-Tensorflow" class="line disable" points="20,40 20,212 40,212" />
+                  </svg>
+                  <div style="grid-column: 3; display: grid; grid-auto-rows: auto; row-gap: 8px; position: absolute; top: 96px; left: 40px;">
+                    <div id="PyTorch" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/pytorch.svg"></div><div class="skill-namecell"><div class="skill-name">PyTorch</div></div><div class="link-cell"><a class="external-link" href="https://pytorch.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="scikit-learn" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/scikit-learn.svg"></div><div class="skill-namecell"><div class="skill-name">scikit-learn</div></div><div class="link-cell"><a class="external-link" href="https://scikit-learn.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Tensorflow" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tensorflow.svg"></div><div class="skill-namecell"><div class="skill-name">Tensorflow</div></div><div class="link-cell"><a class="external-link" href="https://www.tensorflow.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  </div>
+                </div>
+                <div style="grid-column: 3; display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                  <div id="Bottle" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Bottle</div></div><div class="link-cell"><a class="external-link" href="https://bottlepy.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Django" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/django.svg"></div><div class="skill-namecell"><div class="skill-name">Django</div></div><div class="link-cell"><a class="external-link" href="https://www.djangoproject.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Flask" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/flask.svg" style="background-color: white;"></div><div class="skill-namecell"><div class="skill-name">Flask</div></div><div class="link-cell"><a class="external-link" href="https://palletsprojects.com/p/flask/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Pyramid" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Pyramid</div></div><div class="link-cell"><a class="external-link" href="https://trypyramid.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="Tornado" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tornado.png"></div><div class="skill-namecell"><div class="skill-name">Tornado</div></div><div class="link-cell"><a class="external-link" href="https://www.tornadoweb.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100px; height: 232px;">
+                  <text id="Python-Web framework" class="disable" x="8" y="17" font-size="8">Web framework</text>
+                  <polyline id="Python-Bottle" class="line disable" points="0,20, 100,20" />
+                  <polyline id="Python-Django" class="line disable" points="80,68, 100,68" />
+                  <polyline id="Python-Flask" class="line disable" points="80,116, 100,116" />
+                  <polyline id="Python-Pyramid" class="line disable" points="80,164, 100,164" />
+                  <polyline id="Python-Tornado" class="line disable" points="80,20 80,212, 100,212" />
+                </svg>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 580px; height: 1154px; margin-top: 40px;">
+                <text id="Haxe-Compile" class="disable" x="24" y="20" font-size="8">Compile</text>
+                <path id="Haxe-C++" class="line disable" d="M20,212 L56,212 a4,4 0 0,1 8,0 L80,212" />
+                <path id="Haxe-JavaScript" class="line disable" d="M20,308 L56,308 a4,4 0 0,1 8,0 L580,308" />
+                <polyline id="Haxe-Lua" class="line disable" points="20,412 40,412" />
+                <polyline id="Haxe-C#" class="line disable" points="20,604 40,604" />
+                <polyline id="Haxe-PHP" class="line disable" points="20,796 40,796" />
+                <polyline id="Haxe-Python" class="line disable" points="20,0 20,1134 40,1134" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">プログラミング技法</div>
+          <div>
+            <div id="ReactiveX" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/reactivex.png"></div><div class="skill-namecell"><div class="skill-name">ReactiveX</div></div><div class="link-cell"><a class="external-link" href="http://reactivex.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">マークアップ／マークダウン言語</div>
+          <div id="markup-markdown">
+            <!-- HTML -->
+            <div style="display: grid; grid-template-columns: auto 80px auto; grid-template-rows: auto; height: 40px;">
+              <div id="HTML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/html5.svg"></div><div class="skill-namecell"><div class="skill-name">HTML</div></div></div>
+              <div style="display: grid; grid-auto-rows: auto; row-gap: 8px;">
+                <div id="Haml" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/haml.png" style="width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Haml</div></div><div class="link-cell"><a class="external-link" href="https://haml.info" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Pug" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/pug.svg" style="width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Pug</div></div><div class="link-cell"><a class="external-link" href="https://pugjs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Scalate" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/scalate.png" style="width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Scalate</div></div><div class="link-cell"><a class="external-link" href="https://scalate.github.io/scalate/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Slim" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/slim.png" style="width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Slim</div></div><div class="link-cell"><a class="external-link" href="http://slim-lang.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="HTML-Template engine" class="disable" x="8" y="17" font-size="8">Template engine</text>
+                <polyline id="HTML-Haml" class="line disable" points="0,20, 80,20" />
+                <polyline id="HTML-Pug" class="line disable" points="60,68, 80,68" />
+                <polyline id="HTML-Scalate" class="line disable" points="60,116, 80,116" />
+                <polyline id="HTML-Slim" class="line disable" points="60,20 60,164, 80,164" />
+              </svg>
+            </div>
+            <div id="Markdown" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/markdown.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Markdown</div></div><div class="link-cell"><a class="external-link" href="https://daringfireball.net/projects/markdown/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="MathML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">MathML</div></div><div class="link-cell"><a class="external-link" href="https://www.w3.org/Math/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="SAML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">SAML</div></div><div class="link-cell"><a class="external-link" href="https://docs.oasis-open.org/security/saml/Post2.0/sstc-saml-tech-overview-2.0.html" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="TeX" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">TeX</div></div><div class="link-cell"><a class="external-link" href="https://tug.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="XML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">XML</div></div></div>
+            <!-- XAML -->
+            <div style="display: grid; grid-template-columns: auto 60px auto; grid-template-rows: auto; height: 40px;">
+              <div id="XAML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">XAML</div></div></div>
+              <div id="Avalonia" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/avalonia.png"></div><div class="skill-namecell"><div class="skill-name">Avalonia</div></div><div class="link-cell"><a class="external-link" href="https://avaloniaui.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 100%; height: 100%;">
+                <text id="XAML-Framework" class="disable" x="8" y="17" font-size="8">Framework</text>
+                <polyline id="XAML-Avalonia" class="line disable" points="0,20, 60,20" />
+              </svg>
+            </div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">スタイルシート</div>
+          <div id="stylesheet">
+            <div style="display: grid; grid-auto-columns: min-content; justify-content: start;">
+              <div id="CSS" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/css3.svg"></div><div class="skill-namecell"><div class="skill-name">CSS</div></div><div class="link-cell"><a class="external-link" href="https://www.w3.org/Style/CSS/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-rows: min-content; row-gap: 8px; justify-content: start; width: 200px; height: 136px; position: relative; top: 96px; left: 40px;">
+                <div id="Less" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/less.png" style="height: auto;"></div><div class="skill-namecell"><div class="skill-name">Less</div></div><div class="link-cell"><a class="external-link" href="https://lesscss.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Sass" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/sass.svg"></div><div class="skill-namecell"><div class="skill-name">Sass</div></div><div class="link-cell"><a class="external-link" href="https://sass-lang.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Stylus" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/stylus.svg"></div><div class="skill-namecell"><div class="skill-name">Stylus</div></div><div class="link-cell"><a class="external-link" href="https://stylus-lang.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 280px; height: 232px; justify-self: start; align-self: start;">
+                <text id="CSS-Extension" class="disable" x="24" y="68" font-size="8">Extension</text>
+                <polyline id="CSS-Less" class="line disable" points="20,116 40,116" />
+                <polyline id="CSS-Sass" class="line disable" points="20,164 40,164" />
+                <polyline id="CSS-Stylus" class="line disable" points="20,40 20,212 40,212" />
+                <text id="CSS-Framework" class="disable" x="208" y="17" font-size="8">Framework</text>
+                <polyline id="CSS-Bootstrap" class="line disable" points="200,20, 280,20" />
+                <text id="CSS-CSSinJS" class="disable" x="208" y="65" font-size="8">CSS in JS</text>
+                <polyline id="CSS-Emotion" class="line disable" points="260,68, 280,68" />
+                <polyline id="CSS-styled-components" class="line disable" points="180,40 180,68 260,68 260,116, 280,116" />
+              </svg>
+              <div style="grid-row: 1; grid-column: 2; display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                <div id="Bootstrap" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/bootstrap.svg" style="height: auto;"></div><div class="skill-namecell"><div class="skill-name">Bootstrap</div></div><div class="link-cell"><a class="external-link" href="https://getbootstrap.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div style="display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                  <div id="Emotion" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/emotion.png"></div><div class="skill-namecell"><div class="skill-name">Emotion</div></div><div class="link-cell"><a class="external-link" href="https://emotion.sh" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  <div id="styled-components" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/styled-components.png"></div><div class="skill-namecell"><div class="skill-name">styled-components</div></div><div class="link-cell"><a class="external-link" href="https://styled-components.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                </div>
+              </div>
+            </div>
+            <div id="PostCSS" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/postcss.svg"></div><div class="skill-namecell"><div class="skill-name">PostCSS</div></div><div class="link-cell"><a class="external-link" href="https://postcss.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="tailwindcss" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tailwindcss.svg"></div><div class="skill-namecell"><div class="skill-name">tailwindcss</div></div><div class="link-cell"><a class="external-link" href="https://tailwindcss.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">データベース／クエリ言語</div>
+          <div id="query">
+            <div style="display: grid; grid-auto-columns: auto; justify-self: start; align-self: start; grid-row: 1; grid-column: 1;">
+              <div id="Graph-QL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/graphql.svg"></div><div class="skill-namecell"><div class="skill-name">Graph-QL</div></div><div class="link-cell"><a class="external-link" href="https://graphql.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div style="grid-column: 3; display: grid; grid-auto-rows: auto;">
+                <div id="Apollo" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Apollo</div></div><div class="link-cell"><a class="external-link" href="https://www.apollographql.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                <div id="Relay" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/relay.svg"></div><div class="skill-namecell"><div class="skill-name">Relay</div></div><div class="link-cell"><a class="external-link" href="https://relay.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              </div>
+              <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 2; width: 80px; height: 96px;">
+                <text id="Graph-QL-Client" class="disable" x="32" y="65" font-size="8">Client</text>
+                <polyline id="Graph-QL-Relay" class="line disable" points="20,20 20,68 80,68"></polyline>
+                <text id="Graph-QL-Platform" class="disable" x="32" y="17" font-size="8">Platform</text>
+                <polyline id="Graph-QL-Apollo" class="line disable" points="0,20 80,20"></polyline>
+              </svg>
+            </div>
+            <div style="display: flex; gap: 8px;">
+              <div style="display: grid;">
+                <div id="SQL" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">SQL</div></div></div>
+                <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; margin: 88px 0px 0px 40px;">
+                  <div style="display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                    <div id="MariaDB" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/mariadb.svg"></div><div class="skill-namecell"><div class="skill-name">MariaDB</div></div><div class="link-cell"><a class="external-link" href="https://mariadb.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Microsoft SQL Server" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Microsoft SQL Server</div></div><div class="link-cell"><a class="external-link" href="https://www.microsoft.com/ja-jp/sql-server/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="MySQL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">MySQL</div></div><div class="link-cell"><a class="external-link" href="https://www.mysql.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="PostgreSQL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/postgresql.svg"></div><div class="skill-namecell"><div class="skill-name">PostgreSQL</div></div><div class="link-cell"><a class="external-link" href="https://www.postgresql.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="SQLite" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/sqlite.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">SQLite</div></div><div class="link-cell"><a class="external-link" href="https://www.sqlite.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 240px; height: 280px; margin-top: 40px;">
+                  <text id="SQL-Relational" class="disable" x="24" y="36" font-size="8">Relational</text>
+                  <polyline id="SQL-MariaDB" class="line disable" points="20,68 40,68"></polyline>
+                  <polyline id="SQL-Microsoft SQL Server" class="line disable" points="20,116 40,116"></polyline>
+                  <polyline id="SQL-MySQL" class="line disable" points="20,164 40,164"></polyline>
+                  <polyline id="SQL-PostgreSQL" class="line disable" points="20,212 40,212"></polyline>
+                  <polyline id="SQL-SQLite" class="line disable" points="20,0 20,260 40,260"></polyline>
+                </svg>
+              </div>
+              <div style="display: grid;">
+                <div id="NoSQL" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">NoSQL</div></div></div>
+                <div style="grid-row: 1; grid-column: 1; display: grid; grid-auto-columns: auto; margin: 88px 0px 0px 80px;">
+                  <div style="display: grid; grid-auto-rows: min-content; row-gap: 8px;">
+                    <div id="MongoDB" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">MongoDB</div></div><div class="link-cell"><a class="external-link" href="https://www.mongodb.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Redis" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/redis.svg"></div><div class="skill-namecell"><div class="skill-name">Redis</div></div><div class="link-cell"><a class="external-link" href="https://redis.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Neo4j" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/neo4j.svg"></div><div class="skill-namecell"><div class="skill-name">Neo4j</div></div><div class="link-cell"><a class="external-link" href="https://neo4j.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Elasticsearch" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/elasticsearch.svg" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Elasticsearch</div></div><div class="link-cell"><a class="external-link" href="https://www.elastic.co/jp/elasticsearch/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                    <div id="Cassandra" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/cassandra.svg" style="height: auto;"></div><div class="skill-namecell"><div class="skill-name">Cassandra</div></div><div class="link-cell"><a class="external-link" href="https://cassandra.apache.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+                  </div>
+                </div>
+                <svg xmlns="http://www.w3.org/2000/svg" style="grid-row: 1; grid-column: 1; width: 240px; height: 280px; margin-top: 40px;">
+                  <text id="NoSQL-Document" class="disable" x="24" y="65" font-size="8">Document</text>
+                  <polyline id="NoSQL-MongoDB" class="line disable" points="20,68 80,68"></polyline>
+                  <text id="NoSQL-Key-Value" class="disable" x="24" y="111" font-size="8">Key-Value</text>
+                  <polyline id="NoSQL-Redis" class="line disable" points="20,116 80,116"></polyline>
+                  <text id="NoSQL-Graph" class="disable" x="24" y="159" font-size="8">Graph</text>
+                  <polyline id="NoSQL-Neo4j" class="line disable" points="20,164 80,164"></polyline>
+                  <text id="NoSQL-Search" class="disable" x="24" y="207" font-size="8">Search</text>
+                  <polyline id="NoSQL-Elasticsearch" class="line disable" points="20,212 80,212"></polyline>
+                  <text id="NoSQL-Wide Column" class="disable" x="24" y="255" font-size="8">Wide column</text>
+                  <polyline id="NoSQL-Cassandra" class="line disable" points="20,0 20,260 80,260"></polyline>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">ハードウェア記述言語</div>
+          <div id="hardware-description">
+            <div id="AHDL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">AHDL</div></div></div>
+            <div id="Chisel" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/chisel.png" style="background-color: white; width: 24px; height: 24px;"></div><div class="skill-namecell"><div class="skill-name">Chisel</div></div><div class="link-cell"><a class="external-link" href="https://www.chisel-lang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="SystemC" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">SystemC</div></div><div class="link-cell"><a class="external-link" href="https://systemc.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="SystemVerilog" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">SystemVerilog</div></div></div>
+            <div id="Verilog" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Verilog</div></div></div>
+            <div id="VHDL" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">VHDL</div></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">データ記述言語</div>
+          <div id="data">
+            <div id="CUE" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">CUE</div></div><div class="link-cell"><a class="external-link" href="https://cuelang.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="JSON" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">JSON</div></div><div class="link-cell"><a class="external-link" href="https://www.json.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="YAML" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">YAML</div></div><div class="link-cell"><a class="external-link" href="https://yaml.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">コマンドライン</div>
+          <div id="commandline">
+            <div id="bash" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/bash.svg"></div><div class="skill-namecell"><div class="skill-name">bash</div></div><div class="link-cell"><a class="external-link" href="https://www.gnu.org/software/bash/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="dash" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">dash</div></div><div class="link-cell"><a class="external-link" href="http://gondor.apana.org.au/~herbert/dash/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="fish" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/fish.svg"></div><div class="skill-namecell"><div class="skill-name">fish</div></div><div class="link-cell"><a class="external-link" href="https://fishshell.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="ksh" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">ksh</div></div><div class="link-cell"><a class="external-link" href="http://www.kornshell.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="tcsh" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">tcsh</div></div><div class="link-cell"><a class="external-link" href="https://www.tcsh.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="zsh" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">zsh</div></div><div class="link-cell"><a class="external-link" href="https://www.zsh.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Command Prompt" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Command Prompt</div></div></div>
+            <div id="PowerShell" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/powershell.svg"></div><div class="skill-namecell"><div class="skill-name">PowerShell</div></div><div class="link-cell"><a class="external-link" href="https://microsoft.com/powershell" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">バージョン管理</div>
+          <div id="version-control" style="width: 240px;">
+            <div style="display: grid; grid-auto-rows: auto; grid-auto-columns: auto; column-gap: 8px;">
+              <div id="Git" class="skill-cell disable" style="grid-row: 1; grid-column: 1;"><div class="skill-image"><img class="skill-icon" src="./images/git.svg"></div><div class="skill-namecell"><div class="skill-name">Git</div></div><div class="link-cell"><a class="external-link" href="https://git-scm.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <div id="GitHub" class="skill-cell disable" style="grid-row: 1; grid-column: 1; position: relative; top: 96px; left: 40px;"><div class="skill-image"><img class="skill-icon" src="./images/github.svg"></div><div class="skill-namecell"><div class="skill-name">GitHub</div></div><div class="link-cell"><a class="external-link" href="https://github.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+              <svg style="grid-row: 1; grid-column: 1; width: 160px; height: 136px; justify-self: start; align-self: start;">
+                <text id="Git-Development platform" class="disable" x="24" y="68" font-size="8">Development platform</text>
+                <polyline id="Git-GitHub" class="line disable" points="20,40 20,116 40,116" />
+              </svg>
+            </div>
+            <div id="Mercurial" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/mercurial.png"></div><div class="skill-namecell"><div class="skill-name">Mercurial</div></div><div class="link-cell"><a class="external-link" href="https://www.mercurial-scm.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Subversion" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/subversion.svg"></div><div class="skill-namecell"><div class="skill-name">Subversion</div></div><div class="link-cell"><a class="external-link" href="https://subversion.apache.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">コンテナ／仮想化</div>
+          <div id="container-virtualization">
+            <div id="Docker" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/docker.png"></div><div class="skill-namecell"><div class="skill-name">Docker</div></div><div class="link-cell"><a class="external-link" href="https://www.docker.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Kubernetes" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/kubernetes.svg"></div><div class="skill-namecell"><div class="skill-name">Kubernetes</div></div><div class="link-cell"><a class="external-link" href="https://kubernetes.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="LXC" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/lxc.svg"></div><div class="skill-namecell"><div class="skill-name">LXC/LXD</div></div><div class="link-cell"><a class="external-link" href="https://linuxcontainers.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="OpenShift" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/openshift.svg"></div><div class="skill-namecell"><div class="skill-name">OpenShift</div></div><div class="link-cell"><a class="external-link" href="https://openshift.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Podman" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/podman.svg"></div><div class="skill-namecell"><div class="skill-name">Podman</div></div><div class="link-cell"><a class="external-link" href="https://podman.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">プラットフォーム</div>
+          <div id="platform">
+            <div id="Android" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/android.svg"></div>
+              <div class="skill-namecell"><div class="skill-name">Android</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.android.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="iOS" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/ios.svg" style="background-color: white; width: 24px; height: 24px;"></div>
+              <div class="skill-namecell"><div class="skill-name">iOS</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.apple.com/jp/ios/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="Linux" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/tux.svg"></div>
+              <div class="skill-namecell"><div class="skill-name">Linux</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.linux.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="macOS" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/macos.svg" style="background-color: white; width: 24px; height: 24px;"></div>
+              <div class="skill-namecell"><div class="skill-name">macOS</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.apple.com/jp/macos/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="M5Stack" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/m5stack.svg" style="background-color: white; width: 24px; height: 24px;"></div>
+              <div class="skill-namecell"><div class="skill-name">M5Stack</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.m5stack.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="Raspberry Pi" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/raspberrypi.svg" style="width: 24px; height: 24px;"></div>
+              <div class="skill-namecell"><div class="skill-name">Raspberry Pi</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.raspberrypi.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+            <div id="Windows" class="skill-cell disable">
+              <div class="skill-image"><img class="skill-icon" src="./images/windows.svg"></div>
+              <div class="skill-namecell"><div class="skill-name">Windows</div></div>
+              <div class="link-cell"><a class="external-link" href="https://www.microsoft.com/ja-jp/windows" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div>
+            </div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">インフラストラクチャー</div>
+          <div id="infrastructure">
+            <div id="AWS" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/aws.svg" style="background-color: white;"></div><div class="skill-namecell"><div class="skill-name">Amazon Web Services</div></div><div class="link-cell"><a class="external-link" href="https://aws.amazon.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Azure" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/azure.svg"></div><div class="skill-namecell"><div class="skill-name">Microsoft Azure</div></div><div class="link-cell"><a class="external-link" href="https://azure.microsoft.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="GCP" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/gcp.svg"></div><div class="skill-namecell"><div class="skill-name">Google Cloud Platform</div></div><div class="link-cell"><a class="external-link" href="https://cloud.google.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Heroku" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/heroku.svg" style="background-color: #430098;"></div><div class="skill-namecell"><div class="skill-name">Heroku</div></div><div class="link-cell"><a class="external-link" href="https://heroku.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="IBMCloud" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">IBM Cloud</div></div><div class="link-cell"><a class="external-link" href="https://www.ibm.com/jp-ja/cloud" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="OCI" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/oci.svg"></div><div class="skill-namecell"><div class="skill-name">Oracle Cloud</div></div><div class="link-cell"><a class="external-link" href="https://www.oracle.com/jp/cloud" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">Webサーバー</div>
+          <div id="web-server">
+            <div id="Apache HTTP Server" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/httpd.svg"></div><div class="skill-namecell"><div class="skill-name">Apache HTTP Server</div></div><div class="link-cell"><a class="external-link" href="https://httpd.apache.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="NGINX" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/nginx.svg"></div><div class="skill-namecell"><div class="skill-name">NGINX</div></div><div class="link-cell"><a class="external-link" href="https://www.nginx.co.jp" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Microsoft IIS" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Microsoft IIS</div></div><div class="link-cell"><a class="external-link" href="https://www.iis.net" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">マルチプラットフォーム</div>
+          <div id="multi-platform">
+            <div id="Cordova" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/cordova.png"></div><div class="skill-namecell"><div class="skill-name">Cordova</div></div><div class="link-cell"><a class="external-link" href="https://cordova.apache.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Electron" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/electron.svg"></div><div class="skill-namecell"><div class="skill-name">Electron</div></div><div class="link-cell"><a class="external-link" href="https://www.electronjs.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Ionic" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/ionic.svg"></div><div class="skill-namecell"><div class="skill-name">Ionic</div></div><div class="link-cell"><a class="external-link" href="https://ionic.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="React Native" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/react.svg"></div><div class="skill-namecell"><div class="skill-name">React Native</div></div><div class="link-cell"><a class="external-link" href="https://reactnative.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Tauri" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tauri.png"></div><div class="skill-namecell"><div class="skill-name">Tauri</div></div><div class="link-cell"><a class="external-link" href="https://tauri.app" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">リアルタイムOS</div>
+          <div id="rtos">
+            <div id="Azure RTOS ThreadX" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/default.svg"></div><div class="skill-namecell"><div class="skill-name">Azure RTOS ThreadX</div></div><div class="link-cell"><a class="external-link" href="https://azure.microsoft.com/en-us/services/rtos/" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="FreeRTOS" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/freertos.png"></div><div class="skill-namecell"><div class="skill-name">FreeRTOS</div></div><div class="link-cell"><a class="external-link" href="https://www.freertos.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Zephyr" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/zephyr.svg"></div><div class="skill-namecell"><div class="skill-name">Zephyr</div></div><div class="link-cell"><a class="external-link" href="https://www.zephyrproject.org" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+        <div class="domain">
+          <div style="margin: 8px;">CI/CD</div>
+          <div id="cicd">
+            <div id="CircleCI" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/circleci.svg"></div><div class="skill-namecell"><div class="skill-name">CircleCI</div></div><div class="link-cell"><a class="external-link" href="https://circleci.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Dagger" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/dagger.svg"></div><div class="skill-namecell"><div class="skill-name">Dagger</div></div><div class="link-cell"><a class="external-link" href="https://dagger.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Jenkins" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/jenkins.svg"></div><div class="skill-namecell"><div class="skill-name">Jenkins</div></div><div class="link-cell"><a class="external-link" href="https://www.jenkins.io" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="GitHub Actions" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/github-actions.svg"></div><div class="skill-namecell"><div class="skill-name">GitHub Actions</div></div><div class="link-cell"><a class="external-link" href="https://github.com/features/actions" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Tekton" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/tekton.svg"></div><div class="skill-namecell"><div class="skill-name">Tekton</div></div><div class="link-cell"><a class="external-link" href="https://tekton.dev" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+            <div id="Travis CI" class="skill-cell disable"><div class="skill-image"><img class="skill-icon" src="./images/travis.svg"></div><div class="skill-namecell"><div class="skill-name">Travis CI</div></div><div class="link-cell"><a class="external-link" href="https://www.travis-ci.com" target="_blank"><span class="oi" data-glyph="external-link"></span></a></div></div>
+          </div>
+        </div>
+      </div>
+      <div style="text-align:right;">
+        <div><a href="logo.html">logo info</a> / version 0.2.17-beta</div>
+      </div>
+    </main>
+    <footer id="footer">
+      <div id="qrcode-contents" class="invisible">
+        <div id="qrcode" class="invisible"></div>
+      </div>
+      <form id="footer-form" style="margin: 12px; display: grid; grid-template-rows: auto auto; grid-template-columns: 1fr auto">
+        <div style="grid-row: 1; grid-column: 1;">URL: <span id="url_warn"></span></div>
+        <div style="grid-row: 2; grid-column: 1;">
+          <div style="display: flex;">
+            <input id="url" type="url" style="width: 100%;">
+            <input id="move" type="button" value=">" style="background-color: rgba(255,255,255,0.4) ; width: 48px; height:20px; margin: 0px 4px;">
+          </div>
+        </div>
+        <div style="grid-row: 1 / 3; grid-column: 2;">
+          <div><input id="profile_invisible" type="checkbox" style="margin: 0px 8px;">プロフィール非表示</div>
+          <div><input id="qrcode_visible" type="checkbox" style="margin: 0px 8px;">QRコード表示</div>
+        </div>
+      </form>
+    </footer>
+    </div>
+    <script src="./js/skill-list.js"></script>
+    <script src="./js/zlib.min.js"></script>
+    <script src="./js/qrcode.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

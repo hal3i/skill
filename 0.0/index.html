@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-language" content="ja">
+    <meta charset="utf-8">
+    <title>skill simulator</title>
+    <link href="./css/index.css" rel="stylesheet">
+  </head>
+  <body>
+    <noscript>
+      <div style="margin: 2px;">JavaScriptが無効です。機能を利用するためには有効にしてください。</div>
+    </noscript>
+    <script src="/skill/js/version.js"></script>
+    <div id="info" style="background-color: rgba(0,0,0,0.5); text-align: center; padding: 4px;"></div>
+    <form>
+    <div id="profile" style="color: white; background: rgba(0, 0, 0, 0.4); border: 1px white solid; padding: 12px; width: 400px; display: grid; grid-template-columns: 40px auto 48px 10px 48px; column-gap: 8px; row-gap: 8px;">
+      <div>名前</div><input id="name" type="text"><div style="text-align: right;">Lv.</div><div></div><input id="lv" type="text" style="text-align: right;">
+      <div>職業</div><input id="job" type="text"><div style="text-align: right;">状態</div><div></div><input id="status" type="text" style="text-align: right;">
+      <div title="Health Point(健康度)">HP</a></div><div style="border: 1px #2d7600 solid; height: 10px; margin-top: 4px;"><div id="hpbar"></div></div><input id="hp" type="text" style="text-align: right;"><div>/</div><input id="max_hp" type="text" style="text-align: right;">
+      <div title="Skill Point(技術力)">SP</a></div><div style="border: 1px #006eaf solid; height: 10px; margin-top: 4px;"><div id="spbar"></div></div><input id="sp" type="text" style="text-align: right;"><div>/</div><input id="max_sp" type="text" style="text-align: right;">
+      <div title="Experience Point(経験値)">EXP</a></div><input id="exp" type="text" style="grid-column-start: 2; grid-column-end: -1; text-align: right;"></div>
+    </div>
+  </form>
+    <div style="margin-top: 24px;">
+      <div style="margin: 12px;">プログラミング言語</div>
+      <div id="proglang"></div>
+    </div>
+    <div style="margin-top: 24px;">
+      <div style="margin: 12px;">マークアップ／マークダウン言語</div>
+      <div id="markupmarkdown"></div>
+    </div>
+    <div style="margin-top: 24px;">
+      <div style="margin: 12px;">スタイルシート</div>
+      <div id="stylesheet"></div>
+    </div>
+    <div style="margin-top: 24px;">
+      <div style="margin: 12px;">データベース／クエリ言語</div>
+      <div id="query"></div>
+    </div>
+    <div style="margin-top: 24px;">
+      <div style="margin: 12px;">ハードウェア記述言語</div>
+      <div id="hardwaredescription"></div>
+    </div>
+    <form style="margin: 12px;">
+      URL: <span id="url_warn"></span>
+      <input id="url" type="url" style="width: 100%;">
+    </form>
+    <div style="text-align:right;">
+      <div>version 0.0.2-beta</div>
+    </div>
+    <script src="./js/language.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>

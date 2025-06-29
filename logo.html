@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta http-equiv="content-language" content="ja">
+    <meta charset="utf-8">
+    <meta name=”robots” content=”noindex,nofollow,noarchive”>
+    <title>skill simulator</title>
+    <link href="./css/index.css" rel="stylesheet">
+    <style type="text/css">
+      li {
+        margin: 24px;
+      }
+      a:link {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div style="margin: 12px;">サイト上で使用しているロゴは、以下の条項の下でライセンスされ、ガイドラインに基づいて使用しています。</div>
+    <ul>
+      <li>Android は Google LLC の商標です。Android ロボットは、Google が作成および提供している作品から複製または変更したものであり、クリエイティブ・コモンズ表示 3.0 ライセンスに記載された条件に従って使用しています。<a href="https://developer.android.com/distribute/marketing-tools/brand-guidelines?hl=ja" target="_blank">ブランド ガイドライン</a></li>
+      <li>IOS is a trademark or registered trademark of Cisco in the U.S. and other countries and is used under license. macOS are trademarks of Apple Inc., registered in the U.S. and other countries and regions. <a href="https://www.apple.com/jp/legal/intellectual-property/guidelinesfor3rdparties.html" target="_blank">Apple Trademark List</a>.</li>
+      <li><a href="https://github.com/garrett/Tux" target="_blank">Tux</a> is licensed under the <a href="http://creativecommons.org/publicdomain/zero/1.0/" target="_blank">Public domain</a>.</li>
+      <li>Windows <a href="https://www.microsoft.com/ja-jp/legal/intellectualproperty/trademarks" target="_blank">Trademark and Brand Guidelines</a>.</li>
+      <li>C, C++ and C# logo is under the <a href="https://github.com/gilbarbara/logos/blob/master/LICENSE.txt" target="_blank">CC0 1.0</a>.</li>
+      <li>Cloure logo design by Tom Hickey and created by Pykello and is licensed under the <a href="https://creativecommons.org/publicdomain/zero/1.0/deed.ja" target="_blank">Public domain</a>.</li>
+      <li>CoffeeScript logo is licensed under the <a href="https://github.com/jashkenas/coffeescript/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>Crystal logo <a href="https://crystal-lang.org/media/" target="_blank">guidelines</a>.</li>
+      <li>D logo is licensed under the <a href="https://github.com/dlang/dlang.org/blob/master/LICENSE.txt" target="_blank">Boost Software License 1.0</a>.</li>
+      <li>Dart logo is licensed under the <a href="https://github.com/dart-lang/site-www/blob/master/LICENSE" target="_blank">CC BY 4.0</a>.</li>
+      <li>Elixir <a href="https://elixir-lang.org/trademarks" target="_blank">trademarks policy</a>.</li>
+      <li>F# Logo <a href="https://foundation.fsharp.org/logo" target="_blank">Guidelines for Use</a>.</li>
+      <li><a href="https://go.dev/blog/go-brand" target="_blank">Go's New Brand</a>.</li>
+      <li>Groovy logo is licensed under the <a href="https://github.com/apache/groovy/blob/master/LICENSE" target="_blank">Apache License 2.0</a>.</li>
+      <li>Haskell <a href="https://wiki.haskell.org/ThompsonWheelerLogo" target="_blank">Thompson-Wheeler logo</a>.</li>
+      <li>Haxe logo is licensed under the <a href="https://github.com/HaxeFoundation/haxe/blob/development/extra/LICENSE.txt" target="_blank">Haxe License</a>.</li>
+      <li>Javaは、オラクルおよびその関連会社の登録商標です。<a href="https://www.oracle.com/jp/a/ocom/docs/java-licensing-logo-guidelines-1908204.pdf" target="_blank">LOGO GUIDELINES</a></li>
+      <li>JS Logo By The Community is licensed under the <a href="https://github.com/voodootikigod/logo.js/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>Julia logo is licensed under the <a href="" target="_blank">CC BY-NC-SA 4.0</a>.</li>
+      <li>Kotlin logo is licensed under the <a href="https://github.com/JetBrains/kotlin-web-site/blob/master/LICENSE" target="_blank">Apache License 2.0</a>. <a href="https://kotlinlang.org/docs/guidelines.html" target="_blank">Kotlin brand usage guidelines</a></li>
+      <li>LiveScript logo is licensed under the <a href="https://github.com/livescript/artwork" target="_blank">MIT License</a>.</li>
+      <li>Lua logo are freely available and are distributed under the <a href="https://www.lua.org/images/" target="_blank">terms</a>. Copyright © 1998 Lua.org. Graphic design by Alexandre Nakonechnyj.</li>
+      <li>Nim logo licensed under the <a href="https://github.com/nim-lang/assets" target="_blank">MIT License</a></li>
+      <li><a href="https://ocaml.org/docs/logos.html" target="_blank">OCamel logo</a> is licensed under the <a href="https://github.com/ocaml/ocaml.org/blob/master/LICENSE.md" target="_blank">CC BY-SA 4.0</a>.</li>
+      <li>The onion logo used by The Perl Foundation. <a href="https://www.perlfoundation.org/trademarks.html" target="_blank">Trademarks</a>.</li>
+      <li>The author Colin Viebrock released the <a href="https://www.php.net/download-logos.php" target="_blank">PHP logo</a> as <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-Share Alike 4.0 International</a>.</li>
+      <li>The <a href="https://github.com/purescript/logo" target="_blank">PureScript logo</a> is licensed under the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution 4.0 license</a>.</li>
+      <li>"Python" and the <a href="https://www.python.org/community/logos/" target="_blank">Python logos</a> are trademarks or registered trademarks of the Python Software Foundation. <a href="https://www.python.org/psf/trademarks/" target="_blank">PSF Trademark Usage Policy</a></li>
+      <li>The <a href="https://www.r-project.org/logo/" target="_blank">R logo</a> is © 2016 The R Foundation. the logo under the terms of the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International license</a> (CC-BY-SA 4.0).</li>
+      <li>The <a href="https://www.ruby-lang.org/en/about/logo/">Ruby logo</a> is Copyright © 2006, Yukihiro Matsumoto. It is licensed under the terms of the <a href="http://creativecommons.org/licenses/by-sa/2.5/" target="_blank">Creative Commons Attribution-ShareAlike 2.5 License</a> agreement.</li>
+      <li>The Rust and Cargo logos (bitmap and vector) are owned by Mozilla and distributed under the terms of the <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank">Creative Commons Attribution license (CC-BY)</a>. <a href="https://www.rust-lang.org/policies/media-guide" target="_blank">Media guide</a>.</li>
+      <li>Scala logo is licensed under the <a href="https://github.com/scala/scala-lang/blob/main/license.md" target="_blank">Apache License, Version 2.0</a>.</li>
+      <li>Scratch logo is licensed under the <a href="https://github.com/LLK/scratch-www/blob/develop/LICENSE" target="_blank">BSD 3-Clause "New" or "Revised" License</a>.</li>
+      <li>The <a href="https://developer.apple.com/swift/resources/">Swift logo</a> is a trademark of Apple Inc. <a href="https://developer.apple.com/swift/downloads/swift-logo.zip" target="_blank">Download Logo and Guidelines</a></li>
+      <li>Tcl logo is licensed under the <a href="https://www.tcl-lang.org/software/tcltk/license.html" target="_blank">Tcl/Tk license</a>.</li>
+      <li>TypeScript logo in <a href="https://github.com/microsoft/TypeScript-Website/blob/v2/LICENSE" target="_blank"></a>this repository</a> under the <a href="https://creativecommons.org/licenses/by/4.0/legalcode" target="_blank">Creative Commons Attribution 4.0 International Public License</a>.</li>
+      <li>V logo by Sonovice and Don is under the <a href="https://github.com/vlang/v-logo/blob/master/LICENSE" target="_blank">MIT license</a>.</li>
+      <li>Visual Basic documentation is licensed under the <a href="http://creativecommons.org/licenses/by/4.0/legalcode" target="_blank"></a>Creative Commons Attribution 4.0</a>. Copyright (c) .NET Foundation and contributors. All rights reserved.</li>
+      <li>HTML5 logo is licensed under a <a href="http://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 License</a>.</li>
+      <li>Markdown logo is under the licensed <a href="https://github.com/dcurtis/markdown-mark/blob/master/LICENSE" target="_blank">CC0</a>.</li>
+      <li>CSS3 logo is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/deed.en" target="_blank">Creative Commons Attribution 3.0 Unported license</a>.</li>
+      <li><a href="https://sass-lang.com/styleguide/brand" target="_blank">Sass logo</a> is licensed under a <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/deed.en_US" target="_blank">Creative Commons Attribution-NonCommercial-ShareAlike 3.0 Unported License</a>.</li>
+      <li><a href="https://graphql.org/brand/" target="_blank">“GraphQL” is a trademark</a> managed by the GraphQL Foundation. Use of the trademark and logo are subject to the <a href="https://lfprojects.org/policies/trademark-policy/" target="_blank">LF Projects trademark policy</a>.</li>
+      <li><a href="https://brand.jquery.org/logos/#the-mark" target="_blank">jQuery brande guideline</a></li>
+      <li><a href="https://nodejs.org/ja/about/trademark/" target="_blank">Node.js trademark policy</a></li>
+      <li>React logo is licensed under the <a href="https://github.com/facebook/react/blob/main/LICENSE" target="_blank">MIT License</a></li>
+      <li>Vue.js logo is licensed under the <a href="https://github.com/vuejs/art" target="_blank">CC BY-NC-SA 4.0</a>.</li>
+      <li>Angular logo is licensed under the <a href="https://angular.io/presskit" target="_blank">CC BY 4.0</a>.</li>
+      <li><a href="https://nuxtjs.org/design" target="_blank">Nuxt.js logo</a> is licensed under the MIT License.</li>
+      <li>Rails logo is licensed under the <a href="https://github.com/rails/rails/blob/main/MIT-LICENSE" target="_blank">MIT License</a>. <a href="https://rubyonrails.org/trademarks/" target="_blank">Trademarks policy</a>.</li>
+      <li><a href="https://www.arduino.cc/en/trademark" target="_blank">Arduino logo</a> is licensed under the <a href="https://creativecommons.org/licenses/by-sa/3.0/legalcode" target="_blank">Creative Commons Attribution ShareAlike 3.0</a>.</li>
+      <li>PowerShell logo is licensed under the <a href="https://github.com/MicrosoftDocs/PowerShell-Docs/blob/staging/LICENSE" target="_blank">CC BY 4.0</a>.</li>
+      <li><a href="https://github.com/odb/official-bash-logo" target="_blank">Official GNU Bash Logo</a> is licensed under the <a href="https://github.com/odb/official-bash-logo/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>fish Copyright © 2005-2009 Axel Liljencrantz, 2009-2021 fish-shell contributors. fish is released under the <a href="https://github.com/fish-shell/fish-shell/blob/master/doc_src/license.rst" target="_blank"></a>GNU General Public License, version 2</a>.</li>
+      <li>Next.js logo is licensed under the <a href="https://github.com/vercel/next.js/blob/canary/license.md" target="_blank">MIT License</a>.</li>
+      <li><a href="https://brand.qt.io/design#logos" target="_blank">Qt logo</a> - <a href="https://www.qt.io/trademark/" target="_blank">Trademark Usage Guidelines</a></li>
+      <li>Avalonia logo is licensed under the <a href="https://github.com/AvaloniaUI/Avalonia/blob/master/licence.md" target="_blank">MIT License</a></li>
+      <li>Raspberry Pi - <a href="https://www.raspberrypi.org/trademark-rules/" target="_blank">Trademark rules and brand guidelines</a></li>
+      <li><a href="https://flutter.dev/brand" target="_blank">Flutter Brand Guidelines</a></li>
+      <li><a href="https://github.com/fastify/graphics" target="_blank">fastify logo</a> is licensed under the <a href="https://github.com/fastify/fastify/blob/main/LICENSE" target="_blank">MIT License</a></li>
+      <li>NestJS is licensed under the <a href="https://github.com/nestjs/nest/blob/master/LICENSE" target="_blank">MIT License</a></li>
+      <li>The Laravel framework is open-sourced software licensed under the <a href="https://opensource.org/licenses/MIT" target="_blank">MIT license</a>. Laravel is a Trademark of Taylor Otwell. Copyright © 2011-2021 Laravel LLC.</li>
+      <li><a href="https://cakephp.org/pages/trademark" target="_blank">CakePHP Trademark and Logo Policy.</a></li>
+      <li>FuelPHP logo © Copyright 2010-2021 the Fuel PHP Framework team</li>
+      <li>Symfony <a href="https://symfony.com/trademark" target="_blank">Trademark and Logo Policy</a></li>
+      <lI>CodeIgniter® is a registered trademark of the CodeIgniter Foundation. The CodeIgniter logo is an unregistered mark owned by the CodeIgniter Foundation. This work is licensed under a Creative Commons Attribution 4.0 International License. <a href="https://www.codeigniter.com/help/legal">The Fine Print</a></lI>
+      <li><a href="https://www.djangoproject.com/trademarks/" target="_blank">Django Trademark Licensing Agreement</a>. The text of this trademark license is released under the <a href="http://creativecommons.org/licenses/by-sa/3.0/" target="_blank">Creative Commons Attribution-ShareAlike 3.0 Unported License</a>.</li>
+      <li>Flask’s logo - Copyright 2010 Pallets. This logo is licensed under the <a href="https://flask.palletsprojects.com/en/2.0.x/license/#artwork-license">Artwork License</a>.</li>
+      <li>Tornado logo is licensed under <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons 3.0</a>.</li>
+      <li>koa logo is licensed under the <a href="https://github.com/koajs/koa/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>Phalcon logo is licensed under the <a href="https://github.com/phalcon/phalcon.io/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li><a href="https://ja.wordpress.org/trademark-policy/" target="_blank">WordPress 商標ポリシー</a></li>
+      <li>Bootstrap - <a href="https://getbootstrap.com/docs/5.1/about/brand/" target="_target">Brand guidelines</a></li>
+      <li>Less logo is licensed under the <a href="https://github.com/less/less-docs/blob/master/LICENSE-MIT">MIT License</a>.</li>
+      <li>styled-components logo is licensed under the <a href="https://github.com/styled-components/styled-components/blob/main/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>Stylus logo is licensed under the <a href="https://github.com/stylus/stylus/blob/dev/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>Boost C++ Libraries logo is licensed under the <a href="https://github.com/boostorg/boost/blob/master/LICENSE_1_0.txt" target="_blank">Boost Software License 1.0</a>.</li>
+      <li>Hack logo is licensed under the <a href="https://github.com/hhvm/hacklang.org/blob/master/LICENSE" target="_blank">Creative Commons Attribution 4.0 International</a>.</li>
+      <li>Deno images are distributed under the <a href="https://github.com/denoland/dotland" target="_blank"></a>MIT license</a> (public domain and free for use).</li>
+      <li>Unityタブ - <a href="https://unity.com/ja/brand" target="_blank">ガイドライン</a></li>
+      <li>Emotion logo is licensed under the <a href="https://github.com/emotion-js/emotion/blob/main/LICENSE" target="_blank">MIT License</a>.</li>
+      <li><a href="https://www.gatsbyjs.com/guidelines/logo" target="_blank">Gatsby logo guidelines</a></li>
+      <li><a href="https://github.com/sveltejs/branding" target="_blank">Svelte Branding Guidelines</a></li>
+      <li>The Hugo logos are copyright © Steve Francia 2013–2021. This logo is licensed under the <a href="https://github.com/gohugoio/hugoDocs/blob/master/LICENSE.md" target="_blank">Apache License</a>.</li>
+      <li><a href="https://git-scm.com/downloads/logos" target="_blank">Git Logo</a> by <a href="https://twitter.com/jasonlong" target="_blank">Jason Long</a> is licensed under the <a href="https://creativecommons.org/licenses/by/3.0/" target="_blank">Creative Commons Attribution 3.0 Unported License</a>.</li>
+      <li><a href="https://github.com/logos" target="_blank">GitHub Logos and Usage</a></li>
+      <li>Subversion, Struts project logo are registered trademarks of <a href="https://www.apache.org" target="_blank">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a>.</li>
+      <li>Mercurial logo is licensed under GPLv2 or later.</li>
+      <li>Docker and the <a href="https://www.docker.com/company/newsroom/media-resources" target="_blank">Docker logo</a> are trademarks or registered trademarks of Docker, Inc. in the United States and/or other countries. Docker, Inc. and other parties may also have trademark rights in other terms used herein. <a href="https://www.docker.com/legal/trademark-guidelines" target="_blank">Trademark Guidelines</a></li>
+      <li>Kubernetes logo is licensed under the <a href="https://github.com/kubernetes/kubernetes/blob/master/logo/LICENSE" target="_blank">Apache-2.0 or CC-BY-4.0 (Creative Commons Attribution 4.0 International)</a> and a registered trademarks of The Linux Foundation. <a href="https://www.linuxfoundation.org/trademark-usage/" target="_blank">Trademark usage</a></li>
+      <li>LXC logo license is unclear. see <a href="https://github.com/lxc/linuxcontainers.org/blob/master/static/img/COPYRIGHT.md" target="_blank">COPYRIGHT.md</a>.</li>
+      <li><a href="https://aws.amazon.com/jp/trademark-guidelines/" target="_blank">AWS 商標使用ガイドライン</a></li>
+      <li>Phoenix logo is licensed under the <a href="https://github.com/phoenixframework/phoenix/blob/master/LICENSE.md" target="_blank">MIT License</a>.</li>
+      <li><a href="https://about.google/brand-resource-center/" target="_blank">Google's Guidelines for Third Party Use of Google Brand Features</a>.</li>
+      <li><a href="https://brand.heroku.com" target="_blank">Heroku's brand</a></li>
+      <li><a href="https://spring.io/trademarks" target="_blank">Spring Trademark Guidelines</a></li>
+      <li>Play Framework logo is a trademark of Lightbend. <a href="https://www.lightbend.com/legal/trademarks" target="_blank">Trademark Policy</a></li>
+      <li>ReactiveX logo is licensed under Creative Commons Attribution 3.0 License.</li>
+      <li>PyTorch, the PyTorch logo and any related marks are trademarks of Facebook, Inc. <a href="https://pytorch.org/assets/brand-guidelines/PyTorch-Brand-Guidelines.pdf" target="_blank">Brand Guidelines</a></li>
+      <li>Tensorflow - <a href="https://www.tensorflow.org/extras/tensorflow_brand_guidelines.pdf" target="_blank">ブランドの取り扱いガイドライン</a></li>
+      <li>PostCSS logo is copyright under the <a href="https://github.com/postcss/brand/blob/master/LICENSE" target="_blank">CC-BY 4.0 license</a>.</li>
+      <li>tailwindcss is licensed under the <a href="https://github.com/tailwindlabs/tailwindcss/blob/master/LICENSE" target="_blank">MIT License</a>.</li>
+      <li>WebAssembly logo is licensed under the <a href="https://github.com/carlosbaraza/web-assembly-logo/blob/master/LICENSE" target="_blank">CC0 1.0 Universal</a>.</li>
+      <li><a href="https://www.apache.org/foundation/marks/" target="_blank">Apache Software Foundation Trademark Policy.</a></li>
+      <li>NGINX - <a href="https://www.f5.com/company/policies/trademarks" target="_blank">Trademarks</a></li>
+      <li><a href="https://www.unrealengine.com/ja/branding" target="_blank">Unreal Engine のブランディング ガイドラインおよび商標の使用について</a></li>
+      <li>Relay is <a href="https://github.com/facebook/relay/blob/main/LICENSE" target="_blank">MIT licensed</a>.</li>
+      <li>PostgreSQL <a href="https://www.postgresql.org/about/policies/trademarks/" target="_blank">Trademark Policy</a></li>
+      <li>Redis is a trademark of Redis Ltd. Any rights therein are reserved to Redis Ltd. <a href="https://redis.com/brand-guidelines/" target="_blank">Redis Brand Guidelines</a></li>
+      <li>Elasticsearch is a registered trademark of Elasticsearch BV. <a href="https://www.elastic.co/jp/legal/trademarks" target="_blank">Guidelines for using Elasticsearch trademarks and service marks</a></li>
+      <li>Red Hat, OpenShift are registered trademark of Red Hat, Inc. in the United States and other countries. <a href="https://www.redhat.com/ja/about/trademark-guidelines-and-policies" target="_blank">Trademark guidelines and policies</a></li>
+      <li>Official Zig Project Logo is licensed under the <a href="https://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</a>.</li>
+      <li>scikit-learn logo is licensed under the <a href="https://github.com/scikit-learn/scikit-learn/blob/main/COPYING" target="_blank">BSD 3-Clause License</a>.</li>
+      <li>Electron is registered trademark of OpenJS Foundation. <a href="https://trademark-policy.openjsf.org/" target="_blank">OpenJS Foundation Trademark Policy</a>.</li>
+      <li>Tauri logo is licensed under the <a href="https://creativecommons.org/licenses/by-nc-nd/4.0/deed.ja" target="_blank">CC-BY-NC-ND</a>.</li>
+      <li>Chisel is licensed under the <a href="https://github.com/chipsalliance/chisel3/blob/master/LICENSE" target="_blank">Apache License 2.0</a>.</li>
+      <li>Scalate is licensed under the <a href="https://github.com/scalate/scalate/blob/master/license.txt" target="_blank">Apache License 2.0</a>.</li>
+      <li>Slim is released under the <a href="http://www.opensource.org/licenses/MIT" target="_blank">MIT license</a>. | Logo & design by <a href="http://github.com/activestylus" target="_blank">activestylus</a></li>
+      <li>Pug logo is licensed under the <a href="https://github.com/pugjs/pug-logo/blob/master/LICENSE" target="_blank">MIT license</a>.</li>
+      <li>Ionic logo is licensed under the <a href="https://github.com/ionic-team/ionicons/blob/main/LICENSE" target="_blank">MIT license</a>.</li>
+      <li>M5Stack is licensed under the <a href="https://github.com/m5stack/M5Stack/blob/master/LICENSE" target="_blank">MIT license</a>.</li>
+      <li>Bun is licensed under the MIT License, excluding dependencies which have various licenses.</li>
+      <li>Podman is licensed under the <a href="https://github.com/containers/podman/blob/main/LICENSE" target="_blank">Apache License 2.0</a></li>
+      <li>FreeRTOS is licensed under the <a href="https://freertos.org/a00114.html" target="_blank">MIT License</a>.</li>
+      <li>Zephyr logo is a registered trademark of The Linux Foundation. <a href="https://www.linuxfoundation.org/trademark-usage/" target="_blank">Trademark usage</a></li>
+      <li>Jenkins® is a registered trademark of LF Charities Inc. <a href="https://www.jenkins.io/project/trademark/" target="_blank">Trademark and Attribution</a></li>
+      <li><a href="https://brand.circleci.com/613faff00/p/14ba30-circleci-brand" target="_blank">CircleCI Brand</a></li>
+      <li>Tekton logo is a registered trademark of The Linux Foundation. <a href="https://www.linuxfoundation.org/trademark-usage/" target="_blank">Trademark usage</a></li>
+      <li><a href="https://www.ideracorp.com/Legal/idera-trademark-usage-guidelines-and-abuse-policy" target="_blank">Idera Trademark Usage Guidelines and Abuse Policy</a></li>
+      <li>Dagger and the Dagger logo are trademarks or registered trademarks of Blocklayer, Inc. in the United States and/or other countries. Blocklayer, Inc. and other parties may also have trademark rights in other terms used herein. <a href="https://dagger.io/trademark" target="_blank">Dagger Trademark Usage Guidelines</a></li>
+    </ul>
+    <div style="margin: 12px;">以下のロゴは、ガイドラインを満たせないため使用を控えています。</div>
+    <ul>
+      <li>Bottle - <a href="https://bottlepy.org/docs/dev/" target="_blank">LICENSE</a></li>
+      <li>The Pyramid logos are licensed as <a href="https://creativecommons.org/licenses/by-nc/3.0/" target="_blank">Creative Commons Attribution-NonCommercial</a>. <a href="https://trypyramid.com/community-artwork.html" target="_blank">Pyramid Artwork</a>.</li>
+      <li><a href="https://jakarta.ee/legal/trademark_guidelines/" target="_blank">Jakarta EE Trademark Guidelines</a></li>
+      <li><a href="https://www.apollographql.com/Apollo-Website-Terms-of-Service.pdf" target="_blank">Apollo Corporate Website Terms of Use</a></li>
+      <li>MySQL <a href="https://www.mysql.com/about/legal/trademark.html" target="_blank">Logo Usage Guidelines</a></li>
+      <li><a href="https://www.mongodb.com/legal/trademark-usage-guidelines" target="_blank">MongoDB Trademark Standards for Use</a>.</li>
+    </ul>
+  </body>
+</html>

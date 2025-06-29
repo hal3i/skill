@@ -1,0 +1,178 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+html {
+  background-color: #004c99;
+}
+
+body {
+  color: white;
+}
+
+img {
+  width: 24px; height :24px;
+}
+
+#profile {
+  color: white;
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px white solid;
+  width: 400px;
+  margin: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: 40px auto 48px 10px 48px;
+  column-gap: 8px;
+  row-gap: 8px;
+  position: relative;
+  z-index: 0;
+}
+
+#profile div {
+  display: flex;
+  align-items: center;
+}
+
+#proglang, #markupmarkdown, #stylesheet, #query, #hardwaredescription {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+#hp, #sp, #max_hp, #max_sp {
+  text-align: right;
+  z-index: 1;
+}
+
+#hp-bar, #sp-bar {
+  position: relative;
+}
+
+#hp-fill {
+  background-color: #60a917; 
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+}
+
+#hp-border {
+  border: 1px #2d7600 solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+#sp-fill {
+  background-color: #1ba1e2;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 0;
+}
+
+#sp-border {
+  border: 1px #006eaf solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+}
+
+.skill-cell {
+  border: 1px white solid;
+  display: grid;
+  grid-template-columns: 40px auto;
+  grid-template-rows: 1fr 1fr;
+  width: 200px;
+  height: 40px;
+  margin: 8px;
+}
+
+.enable {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.disable {
+  background: rgb(0, 0, 0);
+  opacity: 0.4;
+}
+
+.skill-image {
+  grid-row-start: 1;
+  grid-row-end: 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.skill-namecell {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  display: table;
+}
+
+.skill-name {
+  font-size: 12px;
+  display: table-cell;
+  vertical-align: bottom;
+}
+
+.skill-lvinfo {
+  display: flex;
+}
+
+.skill-lvbar {
+  position: relative;
+  width: 108px;
+}
+
+.lv-fill {
+  background-color: #6666ff;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+}
+
+.lv-border {
+  border: 1px  #6666ff solid;
+  width: 100%;
+  height: 12px;
+  box-sizing: border-box;
+  position: absolute;
+  top: 2px;
+}
+
+.skill-lv {
+  font-size: 12px;
+  position: relative;
+  left: 8px;
+  display: flex;
+  align-items: center;
+}
+
+a:link {
+  color: white;
+}
+
+a:visited {
+  color: white;
+}
+
+a:active {
+  color: white;
+}
+
+input {
+  color: white;
+  background-color: rgba(0, 0, 0, 0);
+  border-color: lightgrey;
+  border-width: 0px 0px 1px 0px;
+}
